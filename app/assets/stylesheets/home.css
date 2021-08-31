@@ -1,0 +1,34 @@
+
+.analyze-top .text-muted{
+	float: left;
+	display: inline-block;
+}
+.analyze-top button{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.dateText{
+	padding-top: 10px;
+}
+.find{
+	margin: 0;
+}
+.channelSelection{
+	list-style: none;
+	margin-left: -40px;
+}
+.channelSelection li{
+	float: left;
+	padding: 3px 7px;
+	border: 1px solid #2f6f9f;
+	border-right: none;
+}
+.channelSelection li:last-child{
+	border-right:1px solid #2f6f9f ;
+}
+.channelSelection li:hover{
+	color: #2f6f9f;
+	background-color: #1e1e24;
+}
