@@ -31,7 +31,7 @@
               <input type="text" class="form-control datepicker" value="" id="datetimepicker2">
             </div>
             <div class="col-md-1.5">
-              <button class="btn btn-default animation-on-hover find" type="button"><i class="tim-icons icon-zoom-split"></i>查询</button>
+              <button class="btn btn-default animation-on-hover find" type="button" onclick="getDate()"><i class="tim-icons icon-zoom-split"></i>查询</button>
             </div>
           </div>
         </form>
@@ -115,7 +115,7 @@ $(document).ready(function() {
 </script>
 <script>
 const labels = [
-  'January',
+  '2021-07-14 00时',
   'February',
   'March',
   'April',
@@ -139,4 +139,8 @@ var myChart = new Chart(
   document.getElementById('myChart'),
   config
 );
+
+function getDate(){
+  console.log($('#datetimepicker1').val())
+}
 </script>
