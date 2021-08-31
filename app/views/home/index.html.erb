@@ -1,1 +1,99 @@
- 
+
+ <div class="content">
+  <div class="card">
+    <ul class="list-group list-group-flush my-top-bar">
+      <!-- 可视化图表上方渠道分析部分 -->
+      <li class="list-group-item ">
+
+        <div class="analyze-top">
+          <p class="h1 text-muted">渠道分析</p>
+          <button class="btn btn-sm animation-on-hover" type="button">新增</button>
+        </div>
+        <div class="clear"></div>
+        <form>
+          <div class="form-row">
+
+            <div class="col-md-2">
+              <select class="selectpicker " data-style="select-with-transition" title="Single Select" data-size="7">
+                <option value="1">所有代理</option>
+                <option value="2">TT_0-TT0关键行为</option>
+                <option value="3">TT_0-TT0关键行为</option>
+                <option value="3">TT_0-TT0关键行为</option>
+                <option value="4">TT_0-TT0关键行为</option>
+              </select>
+            </div>
+
+            <div class="col-md-1.5">
+              <input type="text" class="form-control datepicker" value="" id="datetimepicker1">
+            </div>
+            <div class="col-md-0.3 dateText">至</div>
+            <div class="col-md-1.5">
+              <input type="text" class="form-control datepicker" value="" id="datetimepicker2">
+            </div>
+            <div class="col-md-1.5">
+              <button class="btn btn-default animation-on-hover find" type="button"><i class="tim-icons icon-zoom-split"></i>查询</button>
+            </div>
+          </div>
+        </form>
+      </li>
+
+      <!-- 折线可视化图部分 -->
+      <li class="list-group-item">
+        <p class="h4 text-muted">全部渠道</p> 
+        <div>
+          <ul class="channelSelection">
+            <li>分时新增用户</li>
+            <li>分时活跃用户</li>
+            <li>新增用户</li>
+            <li>活跃用户</li>
+            <li>启动人数</li>
+            <li>视频人数</li>
+            <li>人均视频次数</li>
+          </ul>
+        </div> 
+        <canvas id="myChart"></canvas>
+
+      </li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<%= stylesheet_link_tag "home" %>
+<script>
+$(document).ready(function() {
+  // initialise Datetimepicker and Sliders
+  blackDashboard.initDateTimePicker();
+  if ($('.slider').length != 0) {
+    demo.initSliders();
+  }
+});
+</script>
+<script>
+const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
+const data = {
+  labels: labels,
+  datasets: [{
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [0, 1, 2, 30, 4, 5],
+  }]
+};
+const config = {
+  type: 'line',
+  data: data,
+  options: {}
+};
+var myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);
+</script>
